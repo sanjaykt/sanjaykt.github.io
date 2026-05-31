@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Reset & base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:          #FAF8F4;
+  --bg-surface:  #F3EFE8;
+  --text:        #2C2A25;
+  --text-muted:  #7A7368;
+  --text-faint:  #B0A99F;
+  --accent:      #8B4F1E;
+  --accent-soft: #F5EBE0;
+  --border:      rgba(44, 42, 37, 0.12);
+  --border-med:  rgba(44, 42, 37, 0.20);
+
+  --font-body:    'DM Sans', sans-serif;
+  --font-display: 'Lora', serif;
+
+  --max-w: 680px;
+  --pad-x: 2rem;
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+
+img { display: block; max-width: 100%; }
+
+/* ── Layout container ─────────────────────────────────── */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+/* ── Navigation ───────────────────────────────────────── */
+nav {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--accent); }
+
+/* ── Hero ─────────────────────────────────────────────── */
+.hero {
+  padding: 4rem 0 3.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--text);
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-bio {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+/* ── Section shared ───────────────────────────────────── */
+.section {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 1.75rem;
+}
+
+/* ── Writing list ─────────────────────────────────────── */
+.post-list { list-style: none; }
+
+.post-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.875rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.post-date {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
+.post-title {
+  font-size: 0.9375rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.post-title:hover { color: var(--accent); }
+
+.post-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  letter-spacing: 0.03em;
+}
+
+/* ── Projects grid ────────────────────────────────────── */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: border-color 0.2s;
+}
+
+.project-card:hover { border-color: var(--border-med); }
+
+.project-icon {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.project-card h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+
+.project-card p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+footer {
+  padding: 2rem 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-note {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--accent); }
+
+/* ── Inner pages ──────────────────────────────────────── */
+.page-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.page-header p {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  max-width: 460px;
+}
+
+.page-content {
+  padding: 3rem 0;
+}
+
+/* ── Stub / coming soon ───────────────────────────────── */
+.stub-note {
+  font-size: 0.875rem;
+  color: var(--text-faint);
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 540px) {
+  :root { --pad-x: 1.25rem; }
+  .hero h1 { font-size: 1.65rem; }
+  .nav-links { gap: 1.25rem; }
+  .post-row { flex-wrap: wrap; gap: 0.25rem; }
+  .post-date { min-width: unset; }
+}
